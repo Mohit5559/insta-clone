@@ -1,0 +1,7 @@
+<!-- <div [class]="toasterValue ? 'toaster' : 'toaster hide'" id="toaster-message"> -->
+<div [class]="toasterValue ? 'toaster' : 'toaster hide'">
+<!-- <div class="toaster"> -->
+    <div class="card toaster-body {{ toasterValue ? toasterValue[0] : '' }}">
+        {{ toasterValue? toasterValue[1] : '' }}
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- arindam paul -->
+<div class="list">
+    <div class="wrapper">
+        <div class="heading">
+            <p>Suggested for you</p>
+        </div>
+        <div class="list-body"  *ngFor="let item of data">
+            <div class="left">
+                <div class="img">
+                    <img [src]="url + 'profileImg/' + item.picture " />
+                </div>
+                <div class="desc">
+                    <h4>{{item.username}}</h4>
+                    <h5>{{item.firstname}} {{item.lastname}}</h5>
+                    <h6>Suggested for you</h6>
+                </div>
+            </div>
+            <div class="right">
+                <div class="btn" (click)="userFollow(item.id, item.followedId)">
+                    <button>{{((userId === item.followedId) && item.follow) ? 'Followed' : 'Follow'}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

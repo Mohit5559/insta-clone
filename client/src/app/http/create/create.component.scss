@@ -1,0 +1,85 @@
+.modal{
+    .container{
+        .close{
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            fa-icon{
+                font-size: 2.2rem;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            .card{
+                width: 47rem;
+                height: 47rem;
+                border-radius: 2rem;
+
+                .heading{
+                    text-align: center;
+                    border-bottom: 1px solid var(--line);
+                    padding: 1.5rem;
+                    p{
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        color: var(--primary-text);
+                        font-family: var(--nunito);
+                    }
+                }
+
+                .card-body{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+
+                    .body{
+                        margin-bottom: 13rem;
+                        text-align: center;
+                        .img{
+                            margin-bottom: 2rem;
+                        }
+                        p{
+                            font-size: 2rem;
+                            font-family: var(--nunito);
+                            font-weight: 500;
+                            color: var(--primary-text);
+                            margin-bottom: 2rem;
+                        }
+                        .btn{
+                            width: 100%;
+                            padding: 0.5rem 1.8rem;
+                            background-color: var(--primary-button);
+                            border-radius: 1rem;
+                            font-size: 1.4rem;
+                            font-weight: 600;
+                            color: #fff;
+                            font-family: var(--nunito);
+                            cursor: pointer;
+
+                            &:hover{
+                                background-color: var(--primary-button-hover);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &.hide{
+        display: none;
+    }
+}
+
+
+input[type="file"] {
+    display: none;
+}

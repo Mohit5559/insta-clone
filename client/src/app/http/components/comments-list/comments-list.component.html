@@ -1,0 +1,19 @@
+<div class="comment-list" *ngFor="let item of data">
+    <div class="pro-img">
+        <img [src]="url + 'profileImg/' + item.picture"/>
+    </div>
+    <div class="comment-content">
+        <div class="pro-name">{{ item.username }}</div>
+        <div class="comment">
+            <p>{{item.thought}}</p>
+            <div class="post-details">
+                <div class="day">4d</div>
+                <div class="post-like">60 Likes</div>
+                <div class="reply">Reply</div>
+            </div>
+        </div>
+    </div>
+    <div class="icon">
+        <fa-icon [icon]="icon.faHeart"/>
+    </div>
+</div>

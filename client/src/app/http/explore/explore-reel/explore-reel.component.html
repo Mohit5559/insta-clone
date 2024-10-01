@@ -1,0 +1,85 @@
+<div class="modal {{ exploreReels ? '' : 'hide'}}">
+    <div class="explore-reel-container">
+        <div class="close" (click)="exploreReelModal()">
+            <fa-icon [icon]="icon.faClose" />
+        </div>
+
+        <div class="wrapper">
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="left">
+                        <div class="img">
+                            <img src="../../../../assets/img/4.jpeg"/>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="heading">
+                            <div class="profile-details">
+                                <div class="profile-img">
+                                    <img src="../../../../assets/img/Oval.png" />
+                                </div>
+                                <div class="personal-details">
+                                    <div class="name">
+                                        <h4>pinkychoudhary</h4>
+                                        <p>Ayodhya</p>
+                                    </div>
+                                    <div class="follow">
+                                        <p>Follow</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <fa-icon [icon]="icon.faEllipsis" />
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="mobile-content">
+                            <div class="img">
+                                <img src="../../../../assets/img/4.jpeg"/>
+                            </div>
+                        </div>
+                        <div class="comment-wrapper">
+                            <app-comments-list />
+                            <app-comments-list />
+                            <app-comments-list />
+                            <app-comments-list />
+                            <app-comments-list />
+                            <app-comments-list />
+                            <app-comments-list />
+                        </div>
+                        <div class="footer">
+                            <div class="appreciation">
+                                <div class="icon">
+                                    <div class="icon-left">
+                                        <div class="heart-icon">
+                                            <fa-icon [icon]="icon.faHeart" />
+                                        </div>
+                                        <div class="comment-icon">
+                                            <fa-icon [icon]="icon.faComment" />
+                                        </div>
+                                    </div>
+                                    <div class="icon-left">
+                                        <div class="bookmark-icon">
+                                            <fa-icon [icon]="icon.faBookmark"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="likes-details">
+                                <h4>12321 Likes</h4>
+                                <p>3 days ago</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="comment-write">
+                                <div class="icon">
+                                    <fa-icon [icon]="icon.faFaceSmile" />
+                                </div>
+                                <input type="text" placeholder="Add a comment...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

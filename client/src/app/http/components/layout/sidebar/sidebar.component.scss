@@ -1,0 +1,151 @@
+@import '../../../../../responsive.scss';
+
+.sidebar-section{
+    width: 22.9rem;
+    height: 100vh;
+    padding: 0 1rem;
+    border-right: 1px solid var(--line);
+    position: fixed;
+    left: 0;
+    top: 0;
+    .top{
+        height: 7.7rem;
+        background-image: url('../../../../../assets/img/multiimage.png');
+        background-repeat: no-repeat;
+        background-position: 16px 40px;
+        background-size: 12rem;
+        margin-bottom: 2rem;
+        
+        @include desktop-screen{
+            background-image: url("../../../../../assets/img/icon-1.png");
+            height: 4.5rem;
+            width: 4.5rem;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: 8px 7px;
+            background-size: 3rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .middle{
+        margin-bottom: 3rem;
+        .content-group{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3 s ease;
+            cursor: pointer;
+            
+            .icon{
+                fa-icon{
+                    font-size: 2rem;
+                }
+            }
+            .content{
+                font-size: 1.6rem;
+                font-family: var(--nunito);
+
+                @include desktop-screen{
+                    display: none;
+                }
+            }
+    
+            &:hover{
+                background-color: rgba(0, 0, 0, .05);
+                
+                @include desktop-screen{
+                    width: 5rem;
+                }
+            }
+
+            &:hover, fa-icon{transform: scale(1.03);}
+
+            img{
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .bottom{
+        .bottom-group{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3 s ease;
+            cursor: pointer;
+            
+            .icon{
+                fa-icon{
+                    font-size: 2rem;
+                }
+            }
+            .content{
+                font-size: 1.6rem;
+                font-family: var(--nunito);
+                position: relative;
+
+                .menu-text{
+                    @include desktop-screen{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+                
+                .menu{
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    bottom: 4rem;
+                    left: -5rem;
+                    z-index: 1;
+                    transition: all 0.5s;
+                    background-color: var(--white-bg);
+                    box-shadow: var(--box-shadow);
+                    padding: 1rem;
+                    width: 26rem;
+                    border-radius: 2rem;
+                    .menu-item{
+                        padding: 1.5rem;
+                        border-radius: 0.8rem;
+                        &:hover{background-color: rgba(0, 0, 0, .05);}
+                    }
+                }              
+                
+            }
+    
+            &:hover{
+                background-color: rgba(0, 0, 0, .05);
+                @include desktop-screen{
+                    width: 5rem;
+                }
+            }
+
+            &:hover, fa-icon{transform: scale(1.03);}
+            
+            &:hover>.content>.menu{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    @include desktop-screen{
+        width: 10rem;
+    }
+
+    @include tablet-screen{
+        display: none;
+    }
+}

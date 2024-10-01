@@ -1,0 +1,229 @@
+.modal{
+    .register-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        overflow-y: auto;
+
+        .container{
+            margin-top: 3rem;
+            .close{
+                position: absolute;
+                right: 2.5rem;
+                fa-icon{
+                    font-size: 2.5rem;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+            .wrapper{
+                width: 35rem;
+                padding: 2rem 3rem;
+                border: 1px solid var(--line);
+                text-align: center;
+                
+                .logo-wrapper{
+                    .logo{
+                        background-image: url('../../../../assets/img/multiimage.png');
+                        background-position: 0px 0px;
+                        background-size: 176px 264px;
+                        width: 174px;
+                        height: 50px;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        margin: 1.7rem 0;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        color: var(--secondary-text);
+                    }
+                }
+                
+                .wrapper-bottom{
+                    .third-party-auth{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                        margin: 2rem 0;
+                        border-radius: 1rem;
+                        padding: 0.9rem 0;
+                        background: var(--primary-button);
+
+                        img{
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 100%;
+                        }
+                        p{
+                            font-size: 1.3rem;
+                            font-weight: 500;
+                            color: #fff;
+                            margin-left: .5rem;
+                        }
+                    }
+                }
+
+                .division{
+                    position: relative;
+                    text-align: center;
+                    margin-top: 2.8rem;
+                    margin-bottom: 3.2rem;
+                    .border-line{
+                        border-bottom: 1px solid var(--line);
+                    }
+
+                    .border-upper-content{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        top: -15px;
+                        left: 40%;
+                        width: 5rem;
+                        height: 3rem;
+                        background: var(--card-bg);
+                        p{
+                            font-size: 1.5rem;
+                            color: var(--secondary-text);
+                        }
+                    }
+                }
+
+                .input-wrapper{
+                    .input-group{
+                        position: relative;
+                        border: 1px solid var(--line);
+                        border-radius: 0.5rem;
+                        margin-bottom: 0.5rem;
+
+                        input{
+                            width: 100%;
+                            padding: 1.2rem 1.2rem;
+                            font-size: 1.2rem;
+                            color: var(--primary-text);
+                            // margin-top: 5px;
+                            &::placeholder{
+                                color: transparent;
+                            }
+                        }
+
+
+                        .form-label{
+                            position: absolute;
+                            top: 9px;
+                            left: 0;
+                            font-size: 1.2rem;
+                            padding: 0rem 0.8rem;
+                            // color: #acacac;
+                            color: var(--secondary-text);
+                            pointer-events: none;
+                            transition: all 0.15s ease;
+                        }
+
+                        
+                        input:focus + .form-label,
+                        input:not(:placeholder-shown) + .form-label{
+                            transform: translate(5px, -10px);
+                        }
+
+                        span{
+                            position: absolute;
+                            top: 20%;
+                            right: 1rem;
+                            
+                            fa-icon{
+                                font-size: 2.2rem;
+                                font-weight: 600;
+                            }
+
+                            .danger{
+                                color: rgb(240 63 78);
+                            }
+
+                            .gray{
+                                color: rgb(170 172 175);
+                            }
+                        }
+                                                    
+                        /*
+                            tooltips
+                        */
+                        .tooltip {
+                            position: absolute;
+                            display: inline-block;
+                            // border-bottom: 1px dotted black;
+                        }
+
+                        .tooltip .tooltiptext {
+                            visibility: hidden;
+                            width: 15rem;
+
+                            /* Position the tooltip */
+                            position: absolute;
+                            z-index: 1;
+                            top: -2rem;
+                            left: 0%;
+                            margin-left: -10px;
+
+                            font-size: 1rem;
+                            font-weight: 600;
+                            color: rgba(247, 5, 26, 0.925);
+                        }
+
+                        .tooltip:hover .tooltiptext {
+                            visibility: visible;
+                        }
+                    }
+                }
+
+                .privacy-policy{
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    color: var(--secondary-text);
+                    margin-top: 2rem;
+                }
+
+                .btn{
+                    width: 100%;
+                    padding: 1rem 0;
+                    margin-top: 2rem;
+                    background-color: var(--primary-button-1);
+                    border-radius: 1rem;
+                    cursor: pointer;
+                    button{
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        color: #fff;
+                    }
+                }           
+            }
+            .sign-in{
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+                padding: 2.5rem;
+                border: 1px solid var(--line);
+                text-align: center;
+
+                p{
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: var(--secondary-text);
+
+                    a{
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        color: var(--primary-button);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    &.hide{
+        display: none;
+    }
+}

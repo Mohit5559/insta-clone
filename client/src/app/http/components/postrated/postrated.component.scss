@@ -1,0 +1,150 @@
+.modal{
+    .container{
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            .card{
+                position: relative;
+                width: 40rem;
+                height: 40rem;
+                border-radius: 1.5rem;
+                overflow: hidden;
+
+                .close{
+                    position: absolute;
+                    right: 2rem;
+                    fa-icon{
+                        font-size: 2.5rem;
+                        color: var(--primary-text);
+                        cursor: pointer;
+                    }
+                }
+
+                .heading{
+                    text-align: center;
+                    border-bottom: 1px solid var(--line);
+                    padding: 1.5rem;
+                    p{
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        color: var(--primary-text);
+                        font-family: var(--nunito);
+                    }
+                }
+
+                .card-body{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    overflow: hidden;
+                    height: 100%;
+
+                    .division{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        width: 100%;
+                        padding: 1.2rem 0;
+                        border-bottom: 1px solid var(--line);
+
+                        .people{
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            font-family: var(--nunito);
+                            color: var(--anchor-visited);
+                        }
+                    }
+
+                    .search{
+                        display: flex;
+                        align-items: center;
+                        width: 92%;
+                        background-color: var(--search-bg);
+                        padding: 0.3rem 1rem;
+                        border-radius: 1rem;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.5rem;
+
+                        input{
+                            width: 100%;
+                            padding-left: 1rem;
+                            font-size: 1.5rem;
+                            font-weight: 500;
+                            font-family: var(--nunito);
+                            color: var(--primary-text);
+                        }
+                
+                        span{
+                            fa-icon{
+                                font-size: 1.6rem;
+                                color: var(--secondary-text);
+                            }
+                        }
+                    }
+                    .content{
+                        height: 30.7rem;
+                        width: 100%;
+                        overflow-y: scroll;
+                        /* width */
+                        &::-webkit-scrollbar {
+                            width: 10px;
+                            border-radius: 2rem;
+                        }
+                        
+                        /* Track */
+                        &::-webkit-scrollbar-track {
+                            border-radius: 2rem;
+                        }
+                        
+                        /* Handle */
+                        &::-webkit-scrollbar-thumb {
+                            background: #888;
+                            border-radius: 2rem;
+
+                        }
+                        
+                        .body{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            width: 100%;
+                            margin-top: 4rem;
+                            gap: 1.8rem;
+                            margin-bottom: 3.9rem;
+                            .img{
+                                background-image: url("../../../../assets/img/multiple-2.png");
+                                background-position: -144px 0px;
+                                background-size: 550px;
+                                height: 96px;
+                                width: 96px;
+                            }
+                            .title{
+                                font-size: 2rem;
+                                font-family: var(--nunito);
+                                font-weight: 800;
+                                color: var(--primary-text);
+                            }
+                            p{
+                                font-size: 1.5rem;
+                                font-family: var(--nunito);
+                                font-weight: 400;
+                                color: var(--primary-text);
+                            }
+                            
+                        }
+                        .followers-list{
+                            margin: 0 1.5rem;
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+    
+    &.hide{
+        display: none;
+    }
+}

@@ -1,0 +1,37 @@
+<div class="modal {{ friendsModel ? '' : 'hide'}}">
+    <div class="container">
+        
+        <div class="wrapper">
+            <div class="card">
+                <div class="heading">
+                    <div class="close" (click)="friendsModal()">
+                        <fa-icon [icon]="icon.faClose" />
+                    </div>
+                    <p>{{followers?.title}}</p>
+                </div>
+                <div class="card-body">
+                    <div class="division" *ngIf="followers?.title == 'Following'">
+                        <div class="people">People</div>
+                        <div class="people">Hashtags</div>
+                    </div>
+                    <div class="search">
+                        <span><fa-icon [icon]="icon.faMagnifyingGlass" /></span>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="content">
+                        <div class="body">
+                            <div class="img"></div>
+                            <p class="title">{{followers?.heading}}</p>
+                            <p>{{followers.text}}</p>                            
+                        </div>
+                        <div class="followers-list">
+                            <app-list></app-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

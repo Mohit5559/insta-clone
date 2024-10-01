@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="left-container">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="right-container">
+        <div class="top-bar">
+            <app-header></app-header>
+        </div>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+            <p (click)="topFunction()" class="scrollTop" title="Go to top"><fa-icon [icon]="icon.faChevronUp"/></p>
+        </div>
+        <div class="top-bar">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+ <!-- sidebar -->
+ <div class="sidebar-section">
+    <div class="top">
+        <!-- <img src="../../../../assets/img/multiimage.png" /> -->
+    </div>
+    <div class="middle">
+        <div class="content-group" routerLink="/dashboard">
+            <div class="icon">
+                <svg aria-label="Home" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Home</title><path d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </div>
+            <div class="content">
+                <p>Home</p>
+            </div>
+        </div>
+        <div class="content-group" routerLink="/explore">
+            <div class="icon">
+                <fa-icon [icon]="icon.faCompass"/>
+            </div>
+            <div class="content">
+                <p>Explore</p>
+            </div>
+        </div>
+        <div class="content-group" routerLink="/reel">
+            <div class="icon">
+                <fa-icon [icon]="icon.faClapperboard"/>
+            </div>
+            <div class="content">
+                <p>Reels</p>
+            </div>
+        </div>
+        <div class="content-group" (click)="createModal()">
+            <div class="icon">
+                <fa-icon [icon]="icon.faSquarePlus"/>
+            </div>
+            <div class="content">
+                <p>Create</p>
+            </div>
+        </div>
+        <div class="content-group" [routerLink]="'/'+ profileId">
+            <div class="img">
+                <img [src]="userImg">
+            </div>
+            <div class="content">
+                <p>Profile</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-group">
+            <div class="icon">
+                <fa-icon [icon]="icon.faBars"/>
+            </div>
+            <div class="content">
+                <p class="menu-text">More</p>
+                <div class="menu">
+                    <div class="menu-item" (click)="logout()">
+                        <p>Log out</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+

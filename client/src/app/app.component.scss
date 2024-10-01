@@ -1,0 +1,34 @@
+.app-container{
+    position: relative;
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: fixed;
+        top: 50%;
+        right: -4rem;
+        z-index: 1;
+        transition: all 0.5s ease;
+        height: 4rem;
+        width: 6rem;
+        background: var(--secondary-text);
+        border-top-left-radius: 1.2rem;
+        border-bottom-left-radius: 1.2rem;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+
+        .app-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        fa-icon{ font-size: 2rem; }
+        .chevron{margin-left: 0.5rem;}
+
+        &:hover{
+            right: 0rem;
+        }
+    }
+}

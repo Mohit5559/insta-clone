@@ -1,0 +1,101 @@
+.modal{
+    .container{
+        .close{
+            position: absolute;
+            right: 2rem;
+            fa-icon{
+                font-size: 3rem;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            .card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 35rem;
+                height: 33rem;
+                border-radius: 1rem;
+                .heading{
+                    text-align: center;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    .img{
+                        margin: 1.7rem 0 0.8rem 0;
+                        cursor: pointer;
+                        img{
+                            width: 5.5rem;
+                            height: 5.5rem;
+                            object-fit: cover;
+                            border-radius: 100%;
+                        }
+                    }
+                    .title, .text{
+                        font-size: 1.9rem;
+                        font-family: var(--nunito);
+                        color: var(--primary-text);
+                        font-weight: 600;
+                        word-spacing: -1px;
+                    }
+
+                    .text{
+                        font-size: 1.4rem;
+                        color: var(--secondary-text);
+                    }
+                }
+                .body{
+                    width: 100%;
+                    text-align: center;
+                    .divider{
+                        border-bottom: 1px solid var(--line);
+                    }
+
+                    .upload, .remove, .cancel{
+                        font-size: 1.6rem;
+                        font-family: var(--nunito);
+                        font-weight: 700;
+                        line-height: 2;
+                        cursor: pointer;
+                    }
+
+                    .custom-file-upload{
+                        color: var(--primary-button);
+                        margin: 1.2rem 0 1.2rem 0;
+                        cursor: pointer;
+                    }
+
+                    .remove{
+                        color: rgb(237, 73, 86);
+                        margin: 1.2rem 0 1.2rem 0;
+                    }
+
+                    .cancel{
+                        color: var(--primary-text);
+                        padding-top: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    &.hide{
+        display: none;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+  
+// .custom-file-upload {
+// // border: 1px solid #ccc;
+// display: inline-block;
+// padding: 6px 12px;
+// cursor: pointer;
+// }

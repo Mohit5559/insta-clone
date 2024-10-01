@@ -1,0 +1,201 @@
+.forgot-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    .container{
+        margin-bottom: 7rem;
+        .wrapper{
+            width: 35rem;
+            padding: 2rem 4rem;
+            border: 1px solid var(--line);
+            text-align: center;
+            .logo{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2rem;
+
+                .logo-wrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 10rem;
+                    height: 10rem;
+                    border: 1px solid #000;
+                    border-radius: 100%;
+    
+                    img{
+                        width: 9.6rem;
+                        height: 9.6rem;
+                    }
+                }
+
+                .logo-heading{
+                    margin-top: 1.2rem;
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    color: var(--primary-text);
+                }
+
+                .logo-content{
+                    margin-top: 1rem;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    color: var(--secondary-text);
+                }
+            }
+
+            .input-wrapper{
+                .input-group{
+                    position: relative;
+                    border: 1px solid var(--line);
+                    border-radius: 0.5rem;
+                    margin-bottom: 0.5rem;
+
+                    input{
+                        width: 100%;
+                        padding: 1.2rem 1.2rem;
+                        font-size: 1.2rem;
+                        color: var(--primary-text);
+                        // margin-top: 5px;
+                        &::placeholder{
+                            color: transparent;
+                        }
+                    }
+
+
+                    .form-label{
+                        position: absolute;
+                        top: 9px;
+                        left: 0;
+                        font-size: 1.2rem;
+                        padding: 0rem 0.8rem;
+                        // color: #acacac;
+                        color: var(--secondary-text);
+                        pointer-events: none;
+                        transition: all 0.15s ease;
+                    }
+                    
+                    input:focus + .form-label,
+                    input:not(:placeholder-shown) + .form-label{
+                        transform: translate(5px, -10px);
+                    }
+                    
+                    span{
+                        position: absolute;
+                        top: 20%;
+                        right: 1rem;
+                        
+                        fa-icon{
+                            font-size: 2.2rem;
+                            font-weight: 600;
+                        }
+
+                        .danger{
+                            color: rgb(240 63 78);
+                        }
+
+                        .gray{
+                            color: rgb(170 172 175);
+                        }
+                    }
+                                                
+                    /*
+                        tooltips
+                    */
+                    .tooltip {
+                        position: absolute;
+                        display: inline-block;
+                        // border-bottom: 1px dotted black;
+                    }
+
+                    .tooltip .tooltiptext {
+                        visibility: hidden;
+                        width: 15rem;
+
+                        /* Position the tooltip */
+                        position: absolute;
+                        z-index: 1;
+                        top: -2rem;
+                        left: 0%;
+                        margin-left: -10px;
+
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: rgba(247, 5, 26, 0.925);
+                    }
+
+                    .tooltip:hover .tooltiptext {
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .btn{
+                width: 100%;
+                padding: 1rem 0;
+                margin-top: 2rem;
+                background-color: var(--primary-button-1);
+                border-radius: 1rem;
+                cursor: pointer;
+                button{
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    color: #fff;
+                }
+            }
+
+            .division{
+                position: relative;
+                text-align: center;
+                margin-top: 2.8rem;
+                margin-bottom: 3.2rem;
+                .border-line{
+                    border-bottom: 1px solid var(--line);
+                }
+    
+                .border-upper-content{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -15px;
+                    left: 40%;
+                    width: 5rem;
+                    height: 3rem;
+                    background: var(--card-bg);
+                    p{
+                        font-size: 1.5rem;
+                        color: var(--secondary-text);
+                    }
+                }
+            }
+
+            .wrapper-bottom{
+                a{
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    color: var(--primary-text);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .sign-in{
+            margin-top: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--line);
+            text-align: center;
+
+            p{
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: var(--primary-text);
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import "../../../../../../responsive.scss";
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+
+    .left{
+        display: flex;
+        align-items: center;
+        .img{
+            height: 6rem;
+            background-image: url('../../../../../../assets/img/multiimage.png');
+            background-repeat: no-repeat;
+            background-position: 20px 20px;
+            background-size: 13rem;
+            width: 15rem;
+        }
+        span{
+            position: relative;
+            margin-top: 15px;
+
+            fa-icon{
+                font-size: 2rem;
+                font-weight: 800;
+                font-family: var(--nunito);
+                color: var(--primary-text);
+            }   
+            .menu{
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 4rem;
+                left: -13rem;
+                z-index: 1;
+                transition: all 0.5s;
+                background-color: var(--white-bg);
+                box-shadow: var(--box-shadow);
+                width: 15rem;
+                border-radius: 0.8rem;
+                .menu-item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1.5rem;
+                    p{
+                        font-size: 1.8rem;
+                        font-family: var(--nunito);
+                        font-weight: 500;
+                    }
+                    fa-icon{
+                        font-size: 2rem;
+                        font-weight: 800;
+                        font-family: var(--nunito);
+                        color: var(--secondary-text);
+                    }
+                }
+                .divider{
+                    border-bottom: 1px solid var(--line);
+                }
+            }                
+                
+            &:hover> .menu{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 2rem;
+        width: 40%;
+        
+        .search{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color: var(--search-bg);
+            padding: 0.5rem;
+            border-radius: 1rem;
+            input{
+                padding-left: 1rem;
+                font-size: 1.5rem;
+                font-weight: 500;
+                font-family: var(--nunito);
+                color: var(--primary-text);
+            }
+    
+            span{
+                fa-icon{
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    font-family: var(--nunito);
+                    color: var(--secondary-text);
+                }
+            }
+        }
+
+        .favorite{
+            fa-icon{
+                font-size: 2.2rem;
+                font-weight: 800;
+                font-family: var(--nunito);
+                color: var(--primary-text);
+            }
+        }
+    }
+    
+    @include double-extra-large-screen{
+        display: none;
+    }
+    
+    @include extra-large-screen{
+        display: none;
+    }
+    
+    @include desktop-screen{
+        display: none;
+    }
+    
+    @include laptop-screen{
+        display: none;
+    }
+    
+    @include tablet-screen{
+        display: flex;
+    }
+}

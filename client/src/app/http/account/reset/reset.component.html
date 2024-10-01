@@ -1,0 +1,52 @@
+<div class="reset-container">
+    <div class="header">
+        <div class="left">
+            <img src="../../../../assets/img/Instagram Logo.png" />
+        </div>
+        <div class="right">
+            <div class="loginbtn" [routerLink]="['/']">Log In</div>
+            <div class="signupbtn"(click)="signUpModal()">Sign Up</div>
+        </div>
+    </div>
+    <div class="division"></div>
+    <div class="content-body">
+        <div class="wrapper">
+            <div class="logo">
+                <h3 class="logo-heading">Create A Strong Password</h3>
+                <p class="logo-content">Your password must be at least 6 characters and should include a combination of numbers, letters and special characters (!$@%).</p>
+            </div>
+            <form [formGroup]="resetForm" (ngSubmit)="passwordReset()">
+                <div class="input-wrapper">
+                    <div class="input-group">
+                        <input type="password" placeholder="New password" formControlName="userPass">
+                        <label class="form-label">New password</label>
+                        <span *ngIf="resetForm.controls.userPass.errors && resetForm.controls.userPass.touched" class=" tooltip">
+                            <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                            <span class="tooltiptext" *ngIf="resetForm.controls.userPass.errors?.['required']">This fields is required.</span>
+                            <span class="tooltiptext" *ngIf="resetForm.controls.userPass.errors?.['minlength']">Password should be at least 8 charector.</span>
+                        </span>
+                        <span *ngIf="resetForm.controls.userPass.errors === null">
+                            <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="New password, again" formControlName="conPass">
+                        <label class="form-label">New password, again</label>
+                        <!-- <span *ngIf="(resetForm.controls.conPass.errors && resetForm.controls.conPass.touched) || (resetForm.errors && resetForm.controls.conPass.touched)" class=" tooltip"> -->
+                        <span *ngIf="resetForm.errors && resetForm.controls.conPass.touched" class=" tooltip">
+                            <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                            <!-- <span class="tooltiptext" *ngIf="resetForm.controls.conPass.errors?.['required']">This fields is required.</span> -->
+                            <span class="tooltiptext" *ngIf="resetForm.errors?.['mismatch'] === true">Password doesn't match with confirm password.</span>
+                        </span>
+                        <!-- {{resetForm.errors?.['mismatch']}} -->
+                        <span *ngIf="resetForm.controls.conPass.errors === null && resetForm.errors === null">
+                            <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                        </span>
+                    </div>
+                </div>
+                <button class="btn" (click)="resetForm.status !== 'INVALID' ? passwordReset() : '' ">Log in </button>                
+            </form>
+        </div>
+    </div>
+</div>
+<app-register/>

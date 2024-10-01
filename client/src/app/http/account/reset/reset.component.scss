@@ -1,0 +1,173 @@
+.reset-container{
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1.2rem 0;
+
+        .left{
+            img{
+                height: 3.5rem;
+            }
+        }
+
+        .right{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // gap: 1rem;
+
+            .loginbtn{
+                padding: .8rem 1.5rem;
+                background-color: var(--primary-button);
+                border-radius: 1rem;
+                font-size: 1.4rem;
+                color: #fff;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            .signupbtn{
+                padding: .8rem 1.5rem;
+                border-radius: 1rem;
+                font-size: 1.4rem;
+                color: var(--primary-button);
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
+    .division{
+        border-bottom: 1px solid var(--line);
+    }
+    .content-body{
+        height: calc(100vh - 60px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .wrapper{
+            width: 35rem;
+            padding: 2rem 4rem;
+            border: 1px solid var(--line);
+            text-align: center;
+            .logo{
+                margin-top: 5rem;
+                .logo-heading{
+                    font-weight: 800;
+                    font-size: 1.6rem;
+                    color: var(--primary-text);
+                }
+
+                .logo-content{
+                    margin-top: 1rem;
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    line-height: 1.7;
+                    color: var(--secondary-text);
+                }
+            }
+
+            .input-wrapper{
+                margin-top: 4rem;
+                .input-group{
+                    position: relative;
+                    border: 1px solid var(--line);
+                    border-radius: 0.5rem;
+                    margin-bottom: 3.5rem;
+
+                    input{
+                        width: 100%;
+                        padding: 1.5rem 1.5rem;
+                        font-size: 1.8rem;
+                        color: var(--primary-text);
+                        // margin-top: 5px;
+                        &::placeholder{
+                            color: transparent;
+                        }
+                    }
+
+                    .form-label{
+                        position: absolute;
+                        top: 9px;
+                        left: 0;
+                        font-size: 1.3rem;
+                        padding: 1rem 1rem;
+                        color: var(--secondary-text);
+                        pointer-events: none;
+                        transition: all 0.15s ease;
+                    }
+                    
+                    input:focus + .form-label,
+                    input:not(:placeholder-shown) + .form-label{
+                        transform: translate(8px, -20px);
+                    }
+                    
+                    span{
+                        position: absolute;
+                        top: 20%;
+                        right: 1rem;
+                        
+                        fa-icon{
+                            font-size: 2.2rem;
+                            font-weight: 600;
+                        }
+
+                        .danger{
+                            color: rgb(240 63 78);
+                        }
+
+                        .gray{
+                            color: rgb(170 172 175);
+                        }
+                    }
+                                                
+                    /*
+                        tooltips
+                    */
+                    .tooltip {
+                        position: absolute;
+                        display: inline-block;
+                        // border-bottom: 1px dotted black;
+                    }
+
+                    .tooltip .tooltiptext {
+                        visibility: hidden;
+                        width: 15rem;
+
+                        /* Position the tooltip */
+                        position: absolute;
+                        z-index: 1;
+                        top: -2rem;
+                        left: 0%;
+                        margin-left: -10px;
+
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: rgba(247, 5, 26, 0.925);
+                    }
+
+                    .tooltip:hover .tooltiptext {
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .btn{
+                width: 100%;
+                padding: 1.5rem 0;
+                margin-top: 2rem;
+                margin-bottom: 4rem;
+                background-color: var(--primary-button-1);
+                border-radius: 1rem;
+                cursor: pointer;
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import "../../../../../../responsive.scss";
+.footer-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white-bg);
+    height: 80px;
+    padding-top: 1rem;
+    
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .icon{
+            cursor: pointer;
+            span{
+                fa-icon{
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    font-family: var(--nunito);
+                    color: var(--anchor);
+                }
+            }
+
+            .img{
+                img{
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 100%;
+                }
+            }
+        }
+
+    }
+
+     
+    @include double-extra-large-screen{
+        display: none;
+    }
+    
+    @include extra-large-screen{
+        display: none;
+    }
+    
+    @include desktop-screen{
+        display: none;
+    }
+    
+    @include laptop-screen{
+        display: none;
+    }
+    
+    @include tablet-screen{
+        display: block;
+    }
+}

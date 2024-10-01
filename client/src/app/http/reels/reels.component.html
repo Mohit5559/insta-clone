@@ -1,0 +1,93 @@
+<div class="reel-container">
+    <div class="reel-wrapper">
+        <div class="reel-main" *ngFor="let post of postDetails">        
+            <div class="reel-left">
+                <div class="img">
+                    <!-- <video src="../../../assets/video/sliderVideoprime-3.mp4" class="video"></video> -->
+                    <div class="video-control">
+                        <video class="video" [src]="url + 'userPost/' + post.video" [id]="'video' + post.id" ></video>
+                        <!-- <video class="video" src="double-3.mp4"></video> -->                        
+                        <div class="controls">
+                            <div class="buttons" (click)="videoPlay($event, post.id)">
+                                <button class="play-pause" [id]="'play-pause' + post.id"></button>
+                            </div>
+                        </div>
+                        <div class="orange-bar">
+                            <div class="orange-juice" [id]="'orange-juice'+post.id"></div>
+                        </div>
+                    </div>
+                    <div class="post-details">
+                        <div class="personal">
+                            <div class="prf-img">
+                                <img [src]="url + 'profileImg/' + post.picture" class="dp-img">
+                            </div>
+                            <div class="prf-name">
+                                <p>{{ post.username }}</p>
+                            </div>
+                            <div class="follow" (click)="userFollow(post.userId, post.followedId)">
+                                <p>{{((userId === post.followedId) && post.follow) ? 'Followed' : 'Follow'}}</p>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>post description here...</p>
+                        </div>
+                        <div class="song-address">
+                            <div class="song">
+                                <div class="music"><fa-icon [icon]="icon.faMusic" /></div>
+                                <p>sayaain</p>
+                            </div>
+                            <div class="address">
+                                <div class="location"><fa-icon [icon]="icon.faLocationDot" /></div>
+                                <p>sikar</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reel-right">
+                <div class="icon">
+                    <div class="heart" (click)="postLike(userId, post.id)">
+                        <!-- hearColor is a variable which is handle by the reels.components.ts file -->
+                        <fa-icon [icon]="icon.faHeart" />
+                        <p>{{ post.likes?.length }}</p>
+                    </div>
+                    <div class="comment">
+                        <fa-icon [icon]="icon.faComment" />
+                        <p>{{ post.comments?.length }}</p>
+
+                        <div class="menu">
+                            <div class="menu-item">
+                                <div class="heading">
+                                    <p>Comments</p>
+                                </div>
+                                <div class="comment-wrapper">
+                                    <app-comments-list  [data]="post.comments" />
+                                </div>
+                                <div class="comment-write">
+                                    <div class="prf-img">
+                                        <!-- <img src="../../../assets/img/4.jpeg" class="dp-img"> -->
+                                        <img [src]="url + 'profileImg/' + profileImg" class="dp-img">
+                                    </div>
+                                    <input type="text" placeholder="Add a comment..." (keyup.enter)="postOnComment($event, post.id, userId)">
+                                    <div class="icon">
+                                        <fa-icon [icon]="icon.faFaceSmile" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bookmark">
+                        <fa-icon [icon]="icon.faBookmark" />
+                    </div>
+                    <div class="ellipsis">
+                        <fa-icon [icon]="icon.faEllipsis" />
+                    </div>
+                    <div class="profile-dp">
+                        <!-- <img src="../../../assets/img/4.jpeg" /> -->
+                        <img [src]="url + 'profileImg/' + post.picture" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

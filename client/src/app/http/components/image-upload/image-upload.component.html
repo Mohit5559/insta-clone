@@ -1,0 +1,38 @@
+<div class="modal {{ profileImageModel ? '' : 'hide'}}">
+    <div class="container">
+        <div class="close" (click)="profileUploadModal()">
+            <fa-icon [icon]="icon.faClose" />
+        </div>
+        <div class="wrapper">
+            <div class="card">
+                <div class="heading">
+                    <div class="img">
+                        <img [src]="profileImg || userImg" />
+                    </div>
+                    <div class="title">Image Upload or change</div>
+                    <div class="text">Instagram, Facebook</div>
+                </div>
+                <div class="body">
+                    <div class="divider"></div>
+                    <div class="upload">
+                        <label for="file-upload" class="custom-file-upload">
+                            Upload Photo
+                        </label>
+                        <input id="file-upload" type="file" (change)="selectFile($event)" />
+                    </div>
+                    <div class="divider"></div>
+                    <div class="remove">
+                        <p>Remove Current Photo</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="cancel" (click)="profileUploadModal()">
+                        <p>Cancel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

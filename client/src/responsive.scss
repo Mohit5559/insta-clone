@@ -1,0 +1,36 @@
+// responsive code
+@mixin mobile-screen{
+    @media only screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet-screen{
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop-screen{
+    @media only screen and (max-width: 1024px){
+        @content;
+    }
+}
+
+@mixin desktop-screen{
+    @media only screen and (max-width: 1200px){
+        @content;
+    }
+}
+
+@mixin extra-large-screen{
+    @media only screen and (max-width: 1400px){
+        @content;
+    }
+}
+
+@mixin double-extra-large-screen{
+    @media only screen and (max-width: 3000px){
+        @content;
+    }
+}

@@ -1,0 +1,49 @@
+<div class="forgot-container">
+    <div class="container">
+        <div class="wrapper">
+            <div class="logo">
+                <div class="logo-wrapper">
+                    <img src="../../../../assets/img/insta-lock.png" alt="">
+                </div>
+                <h3 class="logo-heading">Trouble logging in?</h3>
+                <p class="logo-content">Enter your email, phone, or username and we'll send you a link to get back into your account.</p>
+            </div>
+            <form [formGroup]="forgetForm" onsubmit="forget()">
+                <div class="input-wrapper">
+                    <div class="input-group">
+                        <input type="text" placeholder="Phone-number, username or email" formControlName="email">
+                        <!-- <label class="form-label">Phone-number, username or email</label> -->
+                        <label class="form-label">Email</label>
+                        <span *ngIf="forgetForm.controls.email.errors && forgetForm.controls.email.touched" class=" tooltip">
+                            <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                            <span class="tooltiptext" *ngIf="forgetForm.controls.email.errors?.['required']">This fields is required.</span>
+                            <span class="tooltiptext" *ngIf="forgetForm.controls.email.errors?.['email']">Email should be valid.</span>
+                        </span>
+                        <span *ngIf="forgetForm.controls.email.errors === null">
+                            <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="btn" (click)="forget()">
+                    <button>Forgot</button>
+                </div>
+            </form>
+            <div class="division">
+                <div class="border-line"></div>
+                <div class="border-upper-content">
+                    <p>
+                        OR
+                    </p>
+                </div>
+            </div>
+            <div class="wrapper-bottom">
+                <a (click)="signUpModal()">Create new account</a>
+            </div>
+        </div>
+        <div class="sign-in">
+            <p [routerLink]="['/account']">Back to login</p>
+        </div>
+    </div>
+</div>
+<app-register/>

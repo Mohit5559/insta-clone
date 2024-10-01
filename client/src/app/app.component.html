@@ -1,0 +1,19 @@
+<div class="app-container">
+    <div class="right">
+        <div class="app-wrapper">
+            <fa-icon [icon]="icon.faChevronLeft" class="chevron"/>
+            <div class="theme-apply" (click)="changeTheme()">
+                <fa-icon [icon]="themeDark ? icon.faSun : icon.faMoon"/>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+<!-- <app-carousel [images]="images" [autoSlide]="true"></app-carousel> -->
+
+<!-- Message Component -->
+<app-create></app-create>
+<!-- <app-postrated></app-postrated> -->
+<app-toaster></app-toaster>
+<app-modal></app-modal>
+<app-loader></app-loader>

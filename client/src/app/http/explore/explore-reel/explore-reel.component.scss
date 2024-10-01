@@ -1,0 +1,257 @@
+@import "../../../../responsive.scss";
+.explore-reel-container{
+    position: relative;
+    height: 100%;
+   
+    .close{
+        position: absolute;
+        right:2rem;
+        top: 2rem;
+
+        fa-icon{
+            font-size: 2.5rem;
+            color: #fff;
+        }
+    }
+
+    .wrapper{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .content-wrapper{
+            display: flex;
+            justify-content: center;
+            .card{
+                display: flex;
+                height: 90%;
+                width: 75%;
+                background-color: var(--card-bg);
+                border-radius: 5px;
+    
+                .left{
+                    width: 50%;
+                    .img{
+                        height: 100%;
+                        width: 100%;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            @include desktop-screen{
+                                object-fit: fill;
+                            }
+                        }
+                    }
+                    
+                    @include laptop-screen{
+                        display: none;
+                    }
+                }
+                .right{
+                    width: 50%;
+                    // height: 100%;
+                    overflow: hidden;
+                    .heading{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 1.5rem;
+                        
+                        .profile-details{
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+    
+                            .profile-img{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 5.5rem;
+                                height: 5.5rem;
+                                border-width: 2px;
+                                border-style:  solid;
+                                border-color: rgb(240, 51, 171);
+                                border-radius: 50%;
+                                img{
+                                    width: 5rem;
+                                    height: 5rem;
+                                    border-radius: 100%;
+                                }
+                            }
+    
+                            .personal-details{
+                                display: flex;
+                                gap: 1rem;
+    
+                                .name{
+                                    h4{
+                                        font-size: 1.4rem;
+                                        font-family: var(--nunito);
+                                        font-weight: 700;
+                                        color: var(--primary-text);
+                                    }
+                                    p{
+                                        font-size: 1.3rem;
+                                        font-family: var(--nunito);
+                                        font-weight: 500;
+                                        color: var(--secondary-text);
+                                    }
+                                }
+                                .follow{
+                                    font-size: 1.4rem;
+                                    font-family: var(--nunito);
+                                    font-weight: 700;
+                                    color: var(--primary-button);
+                                    margin-top: 0.3rem;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        .icon{
+                            fa-icon{
+                                font-size: 2rem;
+                                color: var(--primary-text);
+                                cursor: pointer;
+                            }
+                        }
+    
+                    }
+    
+                    .divider{
+                        border-bottom: 1px solid var(--line);
+                    }
+                    .mobile-content{
+                        display: none;
+                        width: 100%;
+                        // height: 100%;
+                        
+                        .img{
+                            width: 100%;
+                            height: 100%;
+    
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+    
+                                @include laptop-screen{
+                                    height: 80%;
+                                    width: 100%;                        
+                                }        
+                            }
+                        }
+    
+                        @include laptop-screen{
+                            display: flex;
+                            width: 100%;                        
+                        }
+                    }
+                    .comment-wrapper{
+                        height: 65%;
+                        overflow-y: scroll;
+                        
+                        /* width */
+                        &::-webkit-scrollbar {
+                            width: 1px;
+                        }
+                        
+                        @include laptop-screen{
+                            display: none;
+                        }
+                    }
+    
+                    .footer{
+                        display: flex;
+                        flex-direction: column;
+                        .appreciation{
+                            padding: 0 1.5rem;
+                            .icon{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                cursor: pointer;
+    
+                                .icon-left{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 1.3rem;
+                                    fa-icon{
+                                        font-size: 2.2rem;
+                                    }
+    
+                                }
+    
+                                .heart-icon,.comment-icon,.bookmark-icon{
+                                    &:hover{
+                                        color: var(--secondary-text);
+                                    }
+                                }
+                            }
+                        }
+    
+                        .likes-details{
+                            display: flex;
+                            flex-direction: column;
+                            padding: 1rem 1.5rem;
+                            margin-bottom: 1rem;
+                            h4{
+                                font-size: 1.3rem;
+                                font-family: var(--nunito);
+                                font-weight: 700;
+                                color: var(--primary-text);
+                            }
+                            p{
+                                font-size: 1.2em;
+                                color: var(--secondary-text);
+                                font-family: var(--nunito);
+                                font-weight: 500;
+                            }
+                        }
+    
+                        .comment-write{
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            padding: 1rem 1.5rem;
+                            height: 100%;
+    
+                            .icon{
+                                fa-icon{                                
+                                    font-size: 2rem;
+                                    color: var(--primary-text);
+                                }
+                            }
+                            input{
+                                width: 100%;
+                                font-size: 1.5rem;
+                                font-family: var(--nunito);
+                                color: var(--primary-text);
+                            }
+                        }
+    
+                        @include laptop-screen{
+                            margin-top: 2rem;
+                        }
+                    }
+    
+                    @include laptop-screen{
+                        width: 100%;
+                    }
+                }
+                
+                @include laptop-screen{
+                    display: block;
+                    width: 50%;
+                    height: 80%;
+                }
+            }
+            @include desktop-screen{
+                align-items: center;
+                height: 100%;
+            }
+            @include laptop-screen{
+                height: auto;
+            }
+        }
+    }
+}

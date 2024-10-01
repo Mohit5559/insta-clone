@@ -1,0 +1,63 @@
+@import '../../../responsive.scss';
+.explore-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+
+    .explore-wrapper{
+        display: flex;
+        gap: 4px;
+        .left{
+            .left-two{
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+        }
+        .middle{
+            .middle-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+        }
+        .right{
+            .right-two{
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+        }
+        .img-style{
+            width: 32rem;
+            height: 32rem;
+            object-fit: cover;
+            box-shadow: var(--box-shadow);
+            
+            @include tablet-screen{
+                width: 15rem;
+                height: 15rem;
+            }
+
+            @include laptop-screen{
+                width: 23rem;
+                height: 23rem;
+            }
+        }
+        .img-style-1{
+            width: 32rem;
+            height: 64.4568rem;
+            object-fit: cover;
+            box-shadow: var(--box-shadow);
+            @include tablet-screen{
+                width: 15rem;
+                height: 30.4568rem;
+            }
+            @include laptop-screen{
+                width: 23rem;
+                height: 46.4568rem;
+            }
+        }
+    }
+}

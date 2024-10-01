@@ -1,0 +1,18 @@
+<div [class]="modlValue ? 'modal-container' : 'modal-container hide'" (click)="closeModal()">
+</div>
+
+<div class="modal-container">
+    <div class="card {{ modlValue ? modlValue[0]  : 'hide' }}">
+        <div class="modal-card">
+            <div class="modal-card-heading">
+                <div class="circle success">
+                    <!-- <mat-icon>done</mat-icon> -->
+                </div>
+            </div>
+            <div class="modal-card-body">                
+                <h1>{{ modlValue? modlValue[0] : '' }}</h1>
+                <p>{{ modlValue? modlValue[1] : '' }}</p>
+            </div>
+        </div>
+    </div>
+</div>

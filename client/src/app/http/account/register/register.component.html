@@ -1,0 +1,91 @@
+<div class="modal {{ registerModel ? '' : 'hide'}}">
+    <div class="register-container">
+        <div class="container">
+            <div class="close" (click)="signUpModal()">
+                <fa-icon [icon]="icon.faClose" />
+            </div>
+            <div class="wrapper card">
+                <div class="logo-wrapper">
+                    <div class="logo"></div>
+                    <p>Sign up to see photos and videos from your friends.</p>
+                </div>
+                <div class="wrapper-bottom">
+                    <div class="third-party-auth">
+                        <img src="../../../../assets/img/facebook-logo-1.png" alt="">
+                        <p>Log in with Facebook</p>
+                    </div>
+                </div>
+
+                <div class="division">
+                    <div class="border-line"></div>
+                    <div class="border-upper-content">
+                        <p>
+                            OR
+                        </p>
+                    </div>
+                </div>
+                <form [formGroup]="registerForm" (ngSubmit)="userRegister()">
+                    <div class="input-wrapper">
+                        <div class="input-group">
+                            <input type="text" placeholder="Phone-number or email" formControlName="email">
+                            <label class="form-label">Phone-number or email</label>
+                            <span *ngIf="(registerForm.controls.email.errors && registerForm.controls.email.touched) || (registerForm.errors && registerForm.controls.email.touched)" class=" tooltip">
+                                <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                                <span class="tooltiptext" *ngIf="registerForm.controls.email.errors?.['required']">This fields is required.</span>
+                                <span class="tooltiptext" *ngIf="registerForm.errors?.['mismatch'] === true">Valid email or Numbers are allowed.</span>
+                            </span>
+                            <span *ngIf="registerForm.controls.email.errors === null && registerForm.errors === null">
+                                <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                            </span>
+                        </div>
+                        <!-- <p class="validation-error" *ngIf="errorMessage">{{ errorMessage['email'] }}</p> -->
+                        <div class="input-group">
+                            <input type="text" placeholder="First name" formControlName="firstName">
+                            <label class="form-label">First Name</label>
+                            <span *ngIf="registerForm.controls.firstName.errors && registerForm.controls.firstName.touched" class=" tooltip">
+                                <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                                <span class="tooltiptext" *ngIf="registerForm.controls.firstName.errors?.['required']">First name is required.</span>
+                            </span>
+                            <span *ngIf="registerForm.controls.firstName.errors === null">
+                                <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                            </span>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" placeholder="Last name" formControlName="lastName">
+                            <label class="form-label">Last Name</label>
+                            <span *ngIf="registerForm.controls.lastName.errors && registerForm.controls.lastName.touched" class=" tooltip">
+                                <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                                <span class="tooltiptext" *ngIf="registerForm.controls.lastName.errors?.['required']">Last name is required.</span>
+                            </span>
+                            <span *ngIf="registerForm.controls.lastName.errors === null">
+                                <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                            </span>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="password" formControlName="userPass">
+                            <label class="form-label">password</label>
+                            <span *ngIf="registerForm.controls.userPass.errors && registerForm.controls.userPass.touched" class=" tooltip">
+                                <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                                <span class="tooltiptext" *ngIf="registerForm.controls.userPass.errors?.['required']">Password is required.</span>
+                                <span class="tooltiptext" *ngIf="registerForm.controls.userPass.errors?.['minlength']">Password should be at least 8 charector.</span>
+                            </span>
+                            <span *ngIf="registerForm.controls.userPass.errors === null">
+                                <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="privacy-policy"> People who use our service may have uploaded your contact information to Instagram. Learn More </p>
+
+                    <p class="privacy-policy"> By signing up, you agree to our Terms , Privacy Policy and Cookies Policy</p>
+                    <div (click)="registerForm.status !== 'INVALID' ? userRegister() : '' " class="btn" >
+                        <button>Sign in </button>
+                    </div>
+                </form>
+            </div>
+            <div class="sign-in card">
+                <p>have an account? <a [routerLink]="['/']">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>

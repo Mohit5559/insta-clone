@@ -1,0 +1,215 @@
+
+.profile-container{
+    display: flex;
+    justify-content: space-evenly;
+    .wrapper{
+        margin-top: 2rem;
+        .personal-details{
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            .left{
+                flex: 1;
+                .img{
+                    img{
+                        width: 15rem;
+                        height: 15rem;
+                        object-fit: cover;
+                        border-radius: 100%;
+                    }
+                    cursor: pointer;
+                }
+            }
+            .right{
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                .user-work{
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    margin-bottom: 2.5rem;
+                    .username{
+                        font-size: 2.2rem;
+                        font-family: var(--nunito);
+                        color: var(--primary-text);
+                        font-weight: 500;
+                    }
+
+                    .edt, .view{
+                        &.btn{
+                            padding: .7rem 1.5rem;
+                            background-color:var(--search-bg);
+                            border-radius: 1rem;
+                            cursor: pointer;
+                            button{
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                                font-family: var(--nunito);
+                                color: var(--primary-text);
+                                cursor: pointer;
+                            }
+
+                            &:hover{
+                                background-color: var(--search-bg-hover);
+                            }
+                        }
+                    }
+
+                    .icon{
+                        cursor: pointer;
+                    }
+                }
+
+                .friends-details{
+                    display: flex;
+                    align-items: center;
+                    gap: 4rem;
+                    margin-bottom: 3rem;
+                    .friend{
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+
+                        p{
+                            font-size: 1.6rem;
+                            font-family: var(--nunito);
+                            font-weight: 500;
+                            color: var(--primary-text);
+                        }
+
+                        &.followers, &.following{
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .name{
+                    font-size: 1.8rem;
+                    font-family: var(--nunito);
+                    font-weight: 600;
+                    color: var(--primary-text);
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .new-highlight{
+            display: flex;
+            flex-direction: column;
+            // text-align: center;
+            margin-bottom: 5rem;
+            cursor: pointer;
+            .circle{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 8rem;
+                height: 8rem;
+                border-radius: 100%;
+                border: 2px solid var(--line);
+                margin-bottom: 1.3rem;
+                
+                svg{
+                    color: rgb(199, 199, 199);
+                }
+            }
+
+            p{                
+                font-size: 1.4rem;
+                font-family: var(--nunito);
+                font-weight: 600;
+                color: var(--primary-text);
+                margin-left: 2.2rem;
+            }
+        }
+
+        .divider{
+            border-bottom: 1px solid var(--line);
+        }
+
+        .tabs{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+            margin-top: 2rem;
+            margin-bottom: 6rem;
+            
+            .tab1{
+                display: flex;
+                align-items: center;
+                position: relative;
+                gap: 0.8rem;
+                cursor: pointer;
+
+                p{                
+                    font-size: 1.3rem;
+                    font-family: var(--nunito);
+                    font-weight: 600;
+                    color: var(--primary-text);
+                }
+
+                &::after{
+                    position: absolute;
+                    top: -2rem;
+                    left: 0;
+                    content: '';
+                    min-width: 6.8rem;
+                    width: fit-content;                
+                    border-top: 1px solid var(--primary-text);
+                    // opacity: 0;
+
+                    // &:hover{opacity: 1;}
+                }
+
+            }
+        }
+
+        .post-create{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            .img{
+                background-image: url("../../../assets/img/multiple-1.png");
+                background-repeat: no-repeat;
+                background-position: -128px -269px;
+                height: 62px;
+                width: 62px;
+                cursor: pointer;
+            }
+            .title-para{
+                font-size: 2.5rem;
+                font-family: var(--nunito);
+                font-weight: 900;
+                color: var(--primary-text);
+            }
+            p{
+                font-size: 1.4rem;
+                font-family: var(--nunito);
+                font-weight: 500;
+                color: var(--primary-text);
+            }
+            a{
+                font-size: 1.5rem;
+                font-family: var(--nunito);
+                font-weight: 700;
+                color: var(--primary-button);
+                cursor: pointer;
+            }
+        }
+
+        .profile-footer{
+            text-align: center;
+            p{
+                font-size: 1.4rem;
+                font-family: var(--nunito);
+                font-weight: 400;
+                color: var(--secondary-text);
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

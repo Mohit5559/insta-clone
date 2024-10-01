@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="left-container">
+        <div class="main-img">
+            <img src="../../../../assets/img/home-phones.png" alt=""/>
+            <div class="sld-img">
+                <img 
+                *ngFor="let img of images; let i=index"
+                [src]="img.img"
+                [alt]="img.alt"
+                [ngClass]="{'image-active': selectedIndex === i}"
+                class="fade"
+                />
+            </div>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="wrapper">
+            <div class="logo"></div>
+            <form [formGroup]="loginForm" onsubmit="login()">
+                <div class="input-wrapper">
+                    <div class="input-group">
+                        <input type="text" placeholder="Phone-number, username or email" formControlName="userName">
+                        <label class="form-label">Phone-number, username or email</label>
+                        <span *ngIf="(loginForm.controls.userName.errors && loginForm.controls.userName.touched) || (loginForm.errors && loginForm.controls.userName.touched)" class=" tooltip">
+                            <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                            <span class="tooltiptext" *ngIf="loginForm.controls.userName.errors?.['required']">This fields is required.</span>
+                            <span class="tooltiptext" *ngIf="loginForm.errors?.['mismatch'] === true">Valid email or Numbers are allowed.</span>
+                        </span>
+                        <span *ngIf="loginForm.controls.userName.errors === null && loginForm.errors === null">
+                            <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="password" formControlName="userPass">
+                        <label class="form-label">password</label>
+                        <span *ngIf="loginForm.controls.userPass.errors && loginForm.controls.userPass.touched" class=" tooltip">
+                            <fa-icon [icon]="icon.faCircleXmark" class="danger" />
+                            <span class="tooltiptext" *ngIf="loginForm.controls.userPass.errors?.['required']">Password is required.</span>
+                            <span class="tooltiptext" *ngIf="loginForm.controls.userPass.errors?.['minlength']">Password should be at least 8 charector.</span>
+                        </span>
+                        <span *ngIf="loginForm.controls.userPass.errors === null">
+                            <fa-icon [icon]="icon.faCircleCheck" class="gray"/>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="btn" (click)="loginForm.status !== 'INVALID' ? login() : '' "> -->
+                <div class="btn" (click)="login()">
+                    <button>Log in </button>
+                </div>
+            </form>
+            <div class="division">
+                <div class="border-line"></div>
+                <div class="border-upper-content">
+                    <p>
+                        OR
+                    </p>
+                </div>
+            </div>
+            <div class="wrapper-bottom">
+                <div class="third-party-auth">
+                    <div class="facebookAuth" (click)="facebookLogin()">
+                        <img src="../../../../assets/img/facebook-logo-1.png" alt="">
+                    </div>
+                    <div class="googleAuth" (click)="googleLogin()">
+                        <img class="google_logo" src="../../../../assets/img/google_logo.png" alt="">
+                    </div>
+                </div>
+                <a [routerLink]="['/account/forgot']">Forgot Password?</a>
+            </div>
+        </div>
+        <div class="sign-in">
+            <p>Dont't have an account? <a (click)="signUpModal()">Sign up</a></p>
+        </div>
+    </div>
+
+
+    <app-register/>
+</div>

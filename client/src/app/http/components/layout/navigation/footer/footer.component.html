@@ -1,0 +1,34 @@
+<div class="footer-container">
+    <div class="wrapper">
+        <div class="icon" routerLink="/dashboard">
+            <span>
+                <fa-icon [icon]="icon.faHome"/>
+            </span>
+        </div>
+        <div class="icon" routerLink="/explore">
+            <span>
+                <fa-icon [icon]="icon.faCompass"/>
+            </span>
+        </div>
+        <div class="icon" routerLink="/reel">
+            <span>
+                <fa-icon [icon]="icon.faClapperboard"/>
+            </span>
+        </div>
+        <div class="icon" (click)="createModal()">
+            <span>
+                <fa-icon [icon]="icon.faSquarePlus"/>
+            </span>
+        </div>
+        <div class="icon" [routerLink]="'/'+ profileId">
+            <div class="img">
+                <img [src]="userImg">
+            </div>
+        </div>
+        <div class="icon">
+            <span (click)="logout()">
+                <fa-icon [icon]="icon.faRightFromBracket"/>
+            </span>
+        </div>        
+    </div>
+</div>

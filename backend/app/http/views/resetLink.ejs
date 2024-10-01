@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Password reset link</title>
+    <style>
+        .wrapper{
+            width: 25rem;
+        }
+        .header{
+            font-size: 2rem;            
+            font-family: "Lobster", sans-serif;
+            /* font-style: normal; */
+            color: #000;
+        }
+        
+        p{
+            color: #565a5c;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.2rem;
+        }
+
+        .btn{
+            width: 100%;
+            text-align: center;
+            /* background-color: #1b74e4; */
+            background-color: #47a2ea;
+            cursor: pointer;
+            padding-top: 0.6rem;
+            padding-bottom: 0.6rem;
+            padding-left: 30.5%;
+            padding-right: 30.5%;
+            border-radius: 0.3rem;
+            border: solid 1px #009fdf;
+        }
+
+        a{
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fff !important;
+            font-family: "Poppins", sans-serif;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            Instagram
+        </div>
+        <div class="content">
+            <p>Hi <%= name %></p>
+
+            <p>We got a request to reset your Instagram password.</p>
+            <div>
+                <a href="http://localhost:4200/account/reset/<%= encryptEmail %>" class="btn">Reset password</a>
+            </div>
+            <p>If you ignore this message, your password will not be changed. If you didn't request a password reset, let us know.</p>
+        </div>
+    </div>
+</body>
+</html>
