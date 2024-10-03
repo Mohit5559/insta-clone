@@ -11,9 +11,4 @@ export const environment = {
 
 	// FRONTEND BASEURL.
 	FRONTEND_BASEURL: "",
-
-	// SECRET KEY
-	SECRET_KEY: "sk_test_51NqZ1oSBsLI2uRoJyZ0tHsxJWpoNiScFnMITfDA9PrxXGkSZYjXMlTYdEaWjikt6NMMhucgFEREl5tQ4r58kKzH400nFOhkQl2",
-	// PUBLIC KEY
-	PUBLIC_KEY: "pk_test_51NqZ1oSBsLI2uRoJmwllM17GIEsxTRtcauNAj28dahZbfmer4eXxL0DzNEky4BekexA21JiQ7NSEXDil9UoJ1ff1006f1XJHH4"
 };
