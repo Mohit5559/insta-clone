@@ -5,7 +5,7 @@ const sql = `
         id INT AUTO_INCREMENT NOT NULL,
         PRIMARY KEY (id),
         followedBy INT NULL,
-        FOREIGN KEY (userId) REFERENCES users(id),
+        FOREIGN KEY (followedBy) REFERENCES users(id),
         followedTo INT NULL,
         FOREIGN KEY (followedTo) REFERENCES users(id),
         follow INT(1) DEFAULT 0,
