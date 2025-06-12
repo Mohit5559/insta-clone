@@ -4,21 +4,13 @@ dotenv.config();
 
 const config = {
     // basic settings
-    baseUrl: "http://localhost:3002",
-    frontUrl: "http://localhost:4200",
-    rootUrl: "http://localhost:4200",
-    
-    // database settings
-    port: process.env.PORT,
-    db_host: process.env.MONGO_URL,
-    authKey: "mdkskafdjdljflsjdfldjl",
-    passwordKey: 'password',
-    img_url:this.baseUrl,
-    pass_sec: 'mohitskskdmishrakdfjalf',
-
+    baseUrl: process.env.URL + process.env.PORT,
+    frontUrl: process.env.URL + process.env.FRONT_PORT,
+    rootUrl:process.env.URL,
+   
     // cokie setting
     cokieSec: 'msskkkdmakdfjdk',
-    cokieExpiry: 24 * 60 * 60 * 100,
+    cokieExpiry: process.env.expiry,
 
     // eamil settings
     emailHost: process.env.EMAIL_HOST,
