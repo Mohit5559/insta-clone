@@ -1,0 +1,55 @@
+<div class="shorts-container">
+  <div class="wrapper" *ngFor="let post of postDetails">
+    <div class="short">
+      <video
+        #videoPlayer
+        muted
+        autoplay
+        playsinline
+        controls
+        preload="metadata"
+        [src]="url + 'userPost/' + post.video"
+      ></video>
+    </div>
+    <div class="action">
+      <div class="icon">
+        <div class="heart" (click)="postLike(userId, post.id)">
+            <fa-icon [icon]="icon.faHeart" />
+            <p>{{ post.likes?.length }}</p>
+        </div>
+        <div class="comment">
+          <fa-icon [icon]="icon.faComment" />
+          <p>{{ post.comments?.length }}</p>
+
+          <div class="menu">
+              <div class="menu-item">
+                  <div class="heading">
+                      <p>Comments</p>
+                  </div>
+                  <div class="comment-wrapper">
+                      <app-comments-list  [data]="post.comments" />
+                  </div>
+                  <div class="comment-write">
+                      <div class="prf-img">
+                          <img [src]="url + 'profileImg/' + profileImg" class="dp-img">
+                      </div>
+                      <input type="text" placeholder="Add a comment..." (keyup.enter)="postOnComment($event, post.id, userId)">
+                      <!-- <div class="icon">
+                          <fa-icon [icon]="icon.faFaceSmile" />
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="bookmark">
+            <fa-icon [icon]="icon.faBookmark" />
+        </div>
+        <div class="ellipsis">
+            <fa-icon [icon]="icon.faEllipsis" />
+        </div>
+        <div class="profile-dp">
+            <img [src]="url + 'profileImg/' + post.picture" />
+        </div>
+    </div>
+  </div>
+</div>
