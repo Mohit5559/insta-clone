@@ -7,7 +7,7 @@ const config = {
     baseUrl: process.env.URL + process.env.PORT,
     frontUrl: process.env.URL + process.env.FRONT_PORT,
     rootUrl:process.env.URL,
-   
+    port: 3002,
     // cokie setting
     cokieSec: 'msskkkdmakdfjdk',
     cokieExpiry: process.env.expiry,

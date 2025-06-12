@@ -3,11 +3,12 @@ const config = require('../config/config')
 
 // connect db
 const con = dbConnection.createPool({
-    connectionLimit:10,
+    connectionLimit:3,
     host: config.dbHost,
     user: config.dbUser,
     password: config.dbPwd,
     database: config.dbName,
+    waitforwaitForConnections: true,
 });
 
 // const con = dbConnection.createConnection({    
